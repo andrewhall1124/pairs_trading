@@ -1,2 +1,5 @@
 .venv
 *.parquet
+*.csv
+*.ftr
+__pycache__
