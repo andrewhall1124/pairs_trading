@@ -16,7 +16,6 @@ class COMPUSTAT:
                 self.download_raw_compustat_quarterly_data()
 
             self.clean_raw_compustat_quarterly_data()
-            os.remove(RAW_FILE_PATH)
 
         print("LOADING DATAFRAME")
         self.df = pd.read_parquet(CLEAN_FILE_PATH)

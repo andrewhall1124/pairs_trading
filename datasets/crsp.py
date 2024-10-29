@@ -16,7 +16,6 @@ class CRSP:
                 self.download_raw_crsp_monthly_data()
 
             self.clean_raw_crsp_monthly_data()
-            os.remove(RAW_FILE_PATH)
         self.df = pd.read_parquet(CLEAN_FILE_PATH)
         
     def download_raw_crsp_monthly_data(self):
@@ -50,6 +49,13 @@ class CRSP:
 
         # Cast types
         df['cusip'] = df['cusip'].astype(str)
+        df['ret'] = pd.to_numeric(df['ret'])
+
+        # Sort values
+        df = df.sort_values(by=['permno', 'date'])
+
+        # Reset index
+        df = df.reset_index(drop=True)
 
         df.to_parquet(CLEAN_FILE_PATH)
 

@@ -7,3 +7,4 @@ seaborn
 yfinance
 ipykernel
 gdown
+statsmodels
