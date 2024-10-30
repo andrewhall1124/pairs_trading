@@ -46,6 +46,12 @@ To validate each assumption in the trading strategy, we propose the following st
 
 6. **Cross-sectional deviations in momentum**: Test the significance of cross-sectional standard deviations in momentum features by regressing portfolio returns on this measure to validate it as a predictive factor.
 
+## Replications
+1. Basic short term reversal strategy (baseline)
+2. Simple MSE pairs strategy (Yale Paper)
+3. Barra residuals strategy
+4. K-means clustering + firm characteristics strategy (ML Paper)
+
 ## Further Questions:
 - What is the relationship between returns for extreme news and mild news?
 - Do stocks revert following increases in volume relative to the market?
