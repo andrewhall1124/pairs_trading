@@ -50,6 +50,7 @@ class CRSP:
         # Cast types
         df['cusip'] = df['cusip'].astype(str)
         df['ret'] = pd.to_numeric(df['ret'])
+        df['date'] = pd.to_datetime(df['date'])
 
         # Sort values
         df = df.sort_values(by=['permno', 'date'])
