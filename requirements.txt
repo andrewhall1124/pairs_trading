@@ -9,3 +9,4 @@ ipykernel
 gdown
 statsmodels
 tqdm
+finance-byu
