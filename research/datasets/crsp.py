@@ -1,24 +1,20 @@
 import os
 import gdown
 import pandas as pd
+from research.datasets.config import DATA_DIR
+from research.datasets.dataset import Dataset
 
-RAW_FILE_PATH = "./data/crsp_monthly_raw.csv"
-CLEAN_FILE_PATH = "./data/crsp_monthly_clean.parquet"
+RAW_FILE_PATH = DATA_DIR + "/crsp_monthly_raw.csv"
+CLEAN_FILE_PATH = DATA_DIR + "/crsp_monthly_clean.parquet"
 
-class CRSP:
+class CRSP(Dataset):
     """
     Monthly dataset for CRSP. This class handles the downloading, and cleaning in order to improve the reproducibility of our research.
     """
-    def __init__(self) -> None:
-        if not os.path.exists(CLEAN_FILE_PATH):
-
-            if not os.path.exists(RAW_FILE_PATH):
-                self.download_raw_crsp_monthly_data()
-
-            self.clean_raw_crsp_monthly_data()
-        self.df = pd.read_parquet(CLEAN_FILE_PATH)
+    def __init__(self, RAW_FILE_PATH=RAW_FILE_PATH, CLEAN_FILE_PATH=CLEAN_FILE_PATH) -> None:
+        super().__init__(RAW_FILE_PATH, CLEAN_FILE_PATH)
         
-    def download_raw_crsp_monthly_data(self):
+    def download(self):
         print("DOWNLOADING RAW FILE")
 
         file_id = '15E7hEZdUf9nVVzlZokPVkanglF4j_Vni'
@@ -26,7 +22,7 @@ class CRSP:
 
         gdown.download(url, RAW_FILE_PATH, quiet=False)
 
-    def clean_raw_crsp_monthly_data(self):
+    def clean(self):
         print("CLEANING RAW FILE")
 
         # Raw file
