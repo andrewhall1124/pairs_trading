@@ -3,4 +3,4 @@
 *.csv
 *.ftr
 __pycache__
-data/*.csv
+data

@@ -10,3 +10,4 @@ gdown
 statsmodels
 tqdm
 finance-byu
+tabulate
