@@ -11,3 +11,4 @@ statsmodels
 tqdm
 finance-byu
 tabulate
+statsmodels
