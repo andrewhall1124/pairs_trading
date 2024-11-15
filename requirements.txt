@@ -12,3 +12,4 @@ tqdm
 finance-byu
 tabulate
 statsmodels
+black[jupyter]

@@ -1,9 +1,10 @@
 import os
 
+
 def set_project_root(levels_up=2, print_path: bool = False):
     """
     Sets the working directory to the project root.
-    
+
     Parameters:
     levels_up (int): Number of levels to go up in the directory structure to reach the root.
     """
